@@ -92,6 +92,9 @@ class imageFactoryBasic{
         
         // get extension
         $type = pathinfo($this->targetPath, PATHINFO_EXTENSION);
+        if(empty($type)){
+            $type = $imageFromArr['gdExt'];
+        }
         
         // set file name
         if(!empty($outputName)){
@@ -195,24 +198,31 @@ class imageFactoryBasic{
         switch ($imgType) {
             case '1': //IMAGETYPE_GIF
                 $output['gdImg'] = imagecreatefromgif($this->targetPath);
+                $output['gdExt'] = 'gif';
                 break;
             case '2': //IMAGETYPE_JPEG
                 $output['gdImg'] = imagecreatefromjpeg($this->targetPath);
+                $output['gdExt'] = 'jpeg';
                 break;
             case '3': //IMAGETYPE_PNG
                 $output['gdImg'] = imagecreatefrompng($this->targetPath);
+                $output['gdExt'] = 'png';
                 break;
             case '6': // IMAGETYPE_BMP
                 $output['gdImg'] = imagecreatefrombmp($this->targetPath);
+                $output['gdExt'] = 'bmp';
                 break;
             case '15': //IMAGETYPE_WBMP
                $output['gdImg'] = imagecreatefromwbmp($this->targetPath);
+               $output['gdExt'] = 'wbmp';
                 break;
             case '16': //IMAGETYPE_XBM
                 $output['gdImg'] = imagecreatefromxbm($this->targetPath);
+                $output['gdExt'] = 'xbm';
                 break;
             case '18': //IMAGETYPE_WEBP
                 $output['gdImg'] = imagecreatefromwebp($this->targetPath);
+                $output['gdExt'] = 'webp';
                 break;
             default:
                 $output['gdImg'] = false;
