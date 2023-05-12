@@ -38,4 +38,8 @@ if(!$imageFactoryBasicObj->fileTarget($fileTarget)->isSupported()){
     // delete image file
     unlink($tmpPth1);
     unlink($tmpPth2);
+
+    // get image width and height
+    $imgSize = $imageFactoryBasicObj->fileTarget($fileTarget)->getSize();
+    echo "Width: " . $imgSize['width'] . " height: " . $imgSize['height'];
 }

@@ -46,6 +46,13 @@ class imageFactoryBasic{
         return true;
     }
     
+    public function getSize(){
+        $imgSize = getimagesize($this->targetPath);
+        $output['width']=$imgSize[0];
+        $output['height']=$imgSize[1];
+        return $output;
+    }
+    
     public function convertToWebp($compression_quality = 100){
         if(!$this->pass){return false;}
         $output_dir = $this->outputDir;
