@@ -4,7 +4,6 @@
 # How To Use
   Please refer to [Here](src/run_image_factory_example.php)
 
-# Support to this project
-  donate to me\
+## Supporting me
   [Donate Link](https://gogetfunding.com/open-source-project-and-library/)\
-  THANK for your support
+  Thank you for your support!
